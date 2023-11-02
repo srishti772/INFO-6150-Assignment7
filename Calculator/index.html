@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Login page</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        body {
+            background-color: beige;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+
+        input {
+            background-color: blanchedalmond;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .error{
+            
+            line-height: 0;
+            display: none;
+            color: red;
+            font-weight: bold;
+            font-size: smaller;
+        }
+
+        table{
+            max-width: "500px";
+            width: "500px";
+        }
+
+      
+
+        input.invalid, textarea.invalid{
+	border: 2px solid red;
+}
+
+input.valid, textarea.valid{
+	border: 2px solid green;
+}
+    </style>
+</head>
+
+<body>
+    
+
+    <h1>Login Page</h1>
+    <form method="post">
+        <table>
+            <tr>
+                <td>
+                    <label for="email">Email</label>
+                </td>
+                <td> <input type="text" name="email" id="email" placeholder="example@northeastern.edu"></td>
+
+            </tr><tr>
+                <td colspan="2"><p class="error" id="email_error">error:</p></td>
+            </tr>
+            <tr>
+                <td> <label for="username">Username</label></td>
+                <td> <input type="text" name="username" id="username" placeholder="Username"></td>
+            </tr><tr>
+                <td colspan="2"><p class="error" id="username_error">error:</p></td>
+            </tr>
+
+            <tr>
+                <td> <label for="password">Password</label></td>
+                <td> <input type="password" name="password" id="password" placeholder="Password"></td>
+            </tr><tr>
+                <td colspan="2"><p class="error" id="password_error">error:</p></td>
+
+            </tr>
+
+            <tr>
+                <td> <label for="cpass">Confirm Password</label></td>
+                <td> <input type="password" name="cpass" id="cpass" placeholder="Confirm Password"></td>
+            </tr><tr>
+                <td colspan="2"><p class="error" id="cpass_error">error:</p></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center;"> <input type="submit" name="login" id="login" value="Login"></td>
+            </tr>
+        </table>
+    </form>
+    <script src="./signup.js"></script>
+</body>

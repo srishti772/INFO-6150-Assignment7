@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Login page</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        body {
+            background-color: beige;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+
+        input,button {
+            background-color: blanchedalmond;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .error{
+            
+            line-height: 0;
+            display: none;
+            color: red;
+            font-weight: bold;
+            font-size: smaller;
+        }
+
+        table{
+            max-width: "500px";
+            width: "500px";
+        }
+
+      
+
+        input.invalid, textarea.invalid{
+	border: 2px solid red;
+}
+
+input.valid, textarea.valid{
+	border: 2px solid green;
+}
+    </style>
+</head>
+
+<body>
+    
+
+    <h1>Welcome</h1>
+    <h2 id="username" name="username"></h2>
+ 
+        <table >
+           <tr>
+
+            <td colspan="2">
+                <label for="num1">Number 1</label>
+
+            </td>
+
+            <td colspan="2">
+                <input type="text" name="num1" id="num1">
+
+            </td>
+           </tr>
+
+           <tr>
+            <td colspan="4"><p class="error" id="num1_error">error:</p></td>
+        </tr>
+
+           <tr>
+
+            <td  colspan="2">
+                <label for="num2">Number 2</label>
+
+            </td>
+
+            <td  colspan="2">
+                <input type="text" name="num2" id="num2">
+
+            </td>
+           </tr>
+           <tr>
+            <td colspan="4"><p class="error" id="num2_error">error:</p></td>
+        </tr>
+<tr>
+        <td colspan="2">
+            <label for="result">Result</label>
+        </td>
+    <td colspan="2">
+            <p id="result"> </p>
+        </td>
+    </tr>
+        <tr>
+            <td><input type="button" id="Add" name="Add" value="Add"></td>
+            <td><input type="button"  id="Multiply" name="Multiply" value="Multiply"></td>
+            <td><input type="button"  id="Subtract" name="Subtract" value="Subtract"></td>
+            <td><input type="button"  id="Divide" name="Divide" value="Divide"></td>
+        </tr>
+        
+
+
+
+        </table>
+    <script src="./calculator.js"></script>
+</body>

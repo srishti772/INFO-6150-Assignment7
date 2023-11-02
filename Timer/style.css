@@ -1,0 +1,35 @@
+
+body {
+    background-color: beige;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+input,button {
+    background-color: blanchedalmond;
+}
+
+
+
+.stopwatch {
+    display: block;
+    align-items: center;
+    margin: 50px;
+}
+
+label {
+    font-size:xx-large;
+    margin-bottom: 10px;
+}
+
+button {
+    font-size: small;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 5px;
+}
+
+input[type="date"] {
+    font-size: smaller;
+    padding: 5px;
+}
