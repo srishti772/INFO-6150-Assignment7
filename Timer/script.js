@@ -1,12 +1,7 @@
 $(document).ready(function () {
-   
-
-
     let startTime = 0;
     let running = false;
     var interval;
-
-    
 
 const currentDate = new Date();    
 const year = currentDate.getFullYear();
@@ -18,8 +13,33 @@ const formattedDate = year+'-'+month+'-'+day;
 console.log(formattedDate); // Output: "2023-11-01"
     $("#datepicker").attr("value", formattedDate);
     
+    $("#datepicker").attr("readonly", true);
+
     $("#datepicker").keypress((e) => {
         e.preventDefault();
+    });
+
+    
+    $('#past').on('click', () => {
+        var date = $("#datepicker").val();
+        
+    let currentDate = new Date(date);
+    console.log(currentDate);   
+    currentDate.setDate(currentDate.getDate() - 1);
+    var newDate = currentDate.toISOString().split('T')[0];
+    $("#datepicker").attr("value", newDate);
+
+    });
+
+    $('#future').on('click', () => {
+        var date = $("#datepicker").val();
+        
+    let currentDate = new Date(date);
+    console.log(currentDate);   
+    currentDate.setDate(currentDate.getDate() + 1);
+    var newDate = currentDate.toISOString().split('T')[0];
+    $("#datepicker").attr("value", newDate);
+
     });
 
 
@@ -68,6 +88,7 @@ console.log(formattedDate); // Output: "2023-11-01"
     $('#reset').on('click', () => {
         stopTimer();
         startTime = 0;
+        $('#reset').attr('disabled', true);
         $('#display').text(formatTime(startTime));
     });
 });
