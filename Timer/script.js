@@ -13,7 +13,6 @@ const formattedDate = year+'-'+month+'-'+day;
 console.log(formattedDate); // Output: "2023-11-01"
     $("#datepicker").attr("value", formattedDate);
     
-    $("#datepicker").attr("readonly", true);
 
     $("#datepicker").keypress((e) => {
         e.preventDefault();
@@ -21,13 +20,14 @@ console.log(formattedDate); // Output: "2023-11-01"
 
     
     $('#past').on('click', () => {
+    
         var date = $("#datepicker").val();
-        
+        console.log("date from picker "+date);   
     let currentDate = new Date(date);
     console.log(currentDate);   
     currentDate.setDate(currentDate.getDate() - 1);
     var newDate = currentDate.toISOString().split('T')[0];
-    $("#datepicker").attr("value", newDate);
+    $("#datepicker").val(newDate);
 
     });
 
@@ -38,7 +38,7 @@ console.log(formattedDate); // Output: "2023-11-01"
     console.log(currentDate);   
     currentDate.setDate(currentDate.getDate() + 1);
     var newDate = currentDate.toISOString().split('T')[0];
-    $("#datepicker").attr("value", newDate);
+    $("#datepicker").val(newDate);
 
     });
 
