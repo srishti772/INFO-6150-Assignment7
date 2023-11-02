@@ -69,11 +69,12 @@ $(document).ready(() => {
         checkFormValidity();
     });
     
-    $('#password, #cpass').on('click input change', () => {
+    $('#password, #cpass').on('click input change', (event) => {
+        var inputName = $(event.target).attr("name");
         var password = $('#password').val();
         var cpass = $('#cpass').val();
              
-        if( password.length == 0){
+        if( inputName=="password" && password.length == 0){
             $('#password_error').text('This field is mandatory').show();
             hasPassword=false;
                 }
@@ -95,9 +96,10 @@ $(document).ready(() => {
         }
 
        
-        if (cpass.length==0) {
+        if (inputName=="cpass" && cpass.length==0) {
             $('#cpass_error').text('This field is mandatory').show();
             hasCPass=false;
+            console.log(inputName);
         }
         else if (cpass !== password) {
             $('#cpass_error').text('Passwords do not match.').show();
